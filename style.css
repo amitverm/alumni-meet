@@ -9,8 +9,6 @@ th{ color: #F26B7C;}
 #footer-dark a{ color: rgba(255, 255, 255, 0.7);}
 
 body.participants .card{ height: 100%;}
-.hide{ display: none !important; }
-.show{ display: block !important; }
 
 .blink_me {
 	animation: blinker 3s linear infinite;

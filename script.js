@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('.total').text($('#participant-data .card').length);
 	$('#search-input').bind('keyup', function(e){
 		if ( e.which == 13 ) {
 			e.preventDefault();

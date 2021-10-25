@@ -4,16 +4,29 @@ $(document).ready(function(){
 			e.preventDefault();
 		}
 		var searchTerm = $(this).val();
+		var searchResultNo = 0;
+		var cardCount = $('#participant-data .card').length;
 		if(searchTerm.length > 0){
-			$('#participant-data .card').each(function(){
+			$('#participant-data .card').each(function(index){
 				if(!$(this).text().match(new RegExp(searchTerm, "i"))){
 					$(this).parent().hide();
 				}else{
 					$(this).parent().show();
+					searchResultNo++;
+				}
+
+				if(index == cardCount-1 && searchResultNo == 0){
+					$('#noresult').show();
+				}else{
+					$('#noresult').hide();
+				}
+				if(searchResultNo > 0){
+					$('#noresult').hide();
 				}
 			});
 		}else{
 			$('#participant-data .card').parent().show();
+			$('#noresult').hide();
 		}
 	});
 
